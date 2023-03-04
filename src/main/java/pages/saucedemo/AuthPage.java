@@ -17,6 +17,7 @@ public class AuthPage extends SeleniumBasePage {
     @FindBy(css = "#login-button")
     public WebElement loginButton;
 
+
     public AuthPage() {
         driver.get(ConfigProvider.URL_SAUCE);
         PageFactory.initElements(driver, this);

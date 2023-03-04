@@ -16,4 +16,6 @@ public class ConfigProvider {
     public static String URL_SAUCE = readConfig().getString("main.url_sauce");
     public static String USERNAME = readConfig().getString("auth.username");
     public static String PASSWORD = readConfig().getString("auth.password");
+
+    public static String URL_THREAD = readConfig().getString("main.url_thread");
 }
