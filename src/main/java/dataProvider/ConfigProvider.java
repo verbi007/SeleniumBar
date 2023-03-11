@@ -8,7 +8,7 @@ public class ConfigProvider {
 
     public static Config readConfig() {
         return ConfigFactory.systemProperties().hasPath("testProfile")
-                ? ConfigFactory.load(ConfigFactory.load("testProfile"))
+                ? ConfigFactory.load(ConfigFactory.systemProperties().getString("testProfile"))
                 : ConfigFactory.load("application.conf");
     }
 

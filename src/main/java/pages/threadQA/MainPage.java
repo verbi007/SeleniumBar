@@ -11,6 +11,9 @@ import seleniumCore.SeleniumBasePage;
 public class MainPage extends SeleniumBasePage {
     private Actions action;
 
+    @FindBy(xpath = "//*[text()='Elements']")
+    private WebElement elementsLink;
+
     @FindBy(xpath = "//*[text()='Widgets']")
     private WebElement widgetsBtn;
 
@@ -28,6 +31,11 @@ public class MainPage extends SeleniumBasePage {
         action = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
+
+    public ElementsPage clickElementsLink() {
+        elementsLink.click();
+        return new ElementsPage();
+    }
     public MainPage clickWidgetsBtn() {
         widgetsBtn.click();
         return this;
@@ -38,7 +46,7 @@ public class MainPage extends SeleniumBasePage {
         return this;
     }
 
-    public MainPage interactionWithSlider() throws InterruptedException {
+    public MainPage interactionWithSlider() {
         action.clickAndHold(slider).moveByOffset(6, 0).release().perform();
         return this;
     }
